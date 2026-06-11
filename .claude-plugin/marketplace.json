@@ -1,0 +1,26 @@
+{
+  "owner": "Joesirven",
+  "name": "sirven-kb",
+  "displayName": "Sirven KB Skills",
+  "description": "Personal KB management, research, and workflow skills for sirven-kb.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "kb-workflows",
+      "description": "Core KB workflow skills: research ingestion, meeting prep/ingestion, inbox triage, staleness checks, Obsidian vault management, multi-phase deep research, and KB health auditing.",
+      "source": "./plugins/kb-workflows",
+      "hooks": [
+        {
+          "event": "session:start",
+          "command": "./hooks/forced-eval.sh"
+        }
+      ],
+      "skills": [
+        "./plugins/kb-workflows/skills/forced-eval",
+        "./plugins/kb-workflows/skills/deep-research",
+        "./plugins/kb-workflows/skills/obsidian-kb",
+        "./plugins/kb-workflows/skills/kb-audit"
+      ]
+    }
+  ]
+}
