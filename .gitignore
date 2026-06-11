@@ -1,0 +1,25 @@
+# Personal content — never committed
+_Personal/
+Passwords*/
+*.env
+
+# Secrets and credentials
+**/credentials*
+**/secrets*
+**/*keys*
+
+# OS / editor
+.DS_Store
+.obsidian/workspace.json
+*.swp
+*.swo
+
+# Plugin cache — commit marketplace.json, not the cache
+.claude/plugins/cache/
+node_modules/
+
+# Scratch
+tmp/
+_Trash/
+_Inbox/
+*.tmp
