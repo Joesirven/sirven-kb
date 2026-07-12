@@ -1,12 +1,12 @@
 # CONTRIBUTING.md
 
-> How to safely edit this repo. Read `docs/DESIGN-RATIONALE.md` before changing any convention.
+> How to safely edit this repo. Read `README.md` (Part 2 — Design rationale) before changing any convention.
 
 ---
 
 ## Before you change a convention
 
-Every structural convention in this repo has a reason. The reason lives in `docs/DESIGN-RATIONALE.md`. If you are about to change how `agents.md` files are sized, how modules work, how decisions are recorded, or how skills are packaged, read the relevant section there first. The rationale is not decoration — it prevents re-introduction of known failure modes (status-field drift, skill-source vs. installed gap, context bloat, etc.).
+Every structural convention in this repo has a reason. The reason lives in `README.md` (Part 2 — Design rationale). If you are about to change how `agents.md` files are sized, how modules work, how decisions are recorded, or how skills are packaged, read the relevant entry there first. The rationale is not decoration — it prevents re-introduction of known failure modes (status-field drift, skill-source vs. installed gap, context bloat, etc.).
 
 ---
 
@@ -42,7 +42,7 @@ Modules in `Ops/System/modules/` are the single source of truth for capability l
 5. Record the decision in the nearest `decisions.md` (see below).
 
 **To change an existing module:**
-1. Read `docs/DESIGN-RATIONALE.md` §2 (modules) before editing.
+1. Read `README.md` (Part 2 — Design rationale, entry R2 — modules) before editing.
 2. Edit the single module file. The change propagates automatically to everything that calls it — you do not need to find and update callers.
 3. If the change alters the module's interface (inputs, outputs, or trigger conditions), check whether any skill's `SKILL.md` that calls this module needs an update to its delegation language.
 4. Bump the repo version in `.claude-plugin/marketplace.json` (patch for backward-compatible changes, minor for interface changes).
@@ -66,7 +66,7 @@ Skills live under `plugins/<plugin-name>/skills/<skill-name>/SKILL.md`. They are
 2. Bump the version in `marketplace.json` — without a version bump, Claude Code serves the cached copy.
 3. Tag and push.
 
-**The forced-eval hook:** The first skill in the `kb-workflows` plugin must remain a forced-eval hook. Do not remove it or reorder it to a later position. Without it, skill activation drops from ~84% to ~20%. See `docs/DESIGN-RATIONALE.md` §6.
+**The forced-eval hook:** The first skill in the `kb-workflows` plugin must remain a forced-eval hook. Do not remove it or reorder it to a later position. Without it, skill activation drops from ~84% to ~20%. See `README.md` (Part 2 — Design rationale, entry R6).
 
 ---
 
@@ -117,7 +117,7 @@ The following content must never appear in any committed file in this repo:
 - Org-specific hostnames, internal URLs, or internal project names
 - Content that is only meaningful on one person's machine
 
-These belong in `~/.claude/CLAUDE.md` (personal global layer), `./CLAUDE.local.md` (gitignored per-repo personal), or the personal fork. See `docs/DESIGN-RATIONALE.md` §5 and §7 for the full rationale.
+These belong in `~/.claude/CLAUDE.md` (personal global layer), `./CLAUDE.local.md` (gitignored per-repo personal), or the personal fork. See `README.md` (Part 2 — Design rationale, entry R5) for the full rationale.
 
 ---
 
