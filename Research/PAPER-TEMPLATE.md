@@ -4,8 +4,10 @@ type: research
 status: research-complete
 updated: YYYY-MM-DD
 topic_cluster: <cluster-slug>
-source_url: ""
+citation: ""
+url: ""
 source_type: paper | gov | industry | blog | x | docs
+published: YYYY-MM-DD
 related: []
 tags: []
 ---
