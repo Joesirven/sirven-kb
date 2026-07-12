@@ -29,3 +29,18 @@ Current decision for any topic = newest entry for that key in the nearest `decis
 
 ## Conventions
 Filenames: no spaces, ISO dates. `agents.md` = rules + process, every dir incl. leaves (children ≤ ~80 lines; this file ≤ ~45); `README.md` = human narrative. Scheduled specs: `Ops/System/ScheduledTasks/`.
+Frontmatter schema (the `type`/`status` enums, per-type required fields): `_meta/FRONTMATTER-SCHEMA.md`.
+
+## Language rule — no acronyms (Jose's standing order, 2026-07-08)
+Never use unexplained acronyms in anything written here or in any agent-facing instruction:
+spell out "knowledge base", "decision record", "work in progress", and so on. Universally-
+lexicalized technical names (URL, JSON, SSH, API, iOS) and literal identifiers that must
+match files or code (e.g. a file named `DEC-2026-00N-*`) are allowed, glossed in plain words
+on first mention. Carry this rule verbatim into every `agents.md`, `CLAUDE.md`, skill, or
+prompt you write or update.
+
+## Session ritual
+Every session that edits this vault ends with four steps: a session-tagged commit
+(`<area>: <what> [session: <id>]`), an appended row in `00-OPS/AGENTS-LOG.md`, a state flip
+in `00-OPS/_state/agents.json`, and a run of `eval_session`. Full detail, and per-type
+definitions of done: `00-OPS/PROCESSES.md`.
