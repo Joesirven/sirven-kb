@@ -42,5 +42,7 @@ prompt you write or update.
 ## Session ritual
 Every session that edits this vault ends with four steps: a session-tagged commit
 (`<area>: <what> [session: <id>]`), an appended row in `00-OPS/AGENTS-LOG.md`, a state flip
-in `00-OPS/_state/agents.json`, and a run of `eval_session`. Full detail, and per-type
+of the session's row in the meadow-postgres state store (the old `agents.json` file is
+retired per Jose's 2026-07-17 order — state lives only in the database; never recreate the
+file), and a run of `eval_session`. Full detail, and per-type
 definitions of done: `00-OPS/PROCESSES.md`.

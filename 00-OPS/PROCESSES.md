@@ -23,9 +23,11 @@ Every session that edits this vault ends with all four of these steps, in order:
 2. **`AGENTS-LOG.md` append.** Append one row to `00-OPS/AGENTS-LOG.md` recording the date,
    session id, agent, and a one-line summary of what the session did. Append-only — never
    edit or remove an existing row.
-3. **`agents.json` state flip.** Flip this session's entry in `00-OPS/_state/agents.json` to
-   `done` (or `error`, if it ended badly), matching the shape in
+3. **State flip.** Flip this session's row in the meadow-postgres state store to `done` (or
+   `error`, if it ended badly), matching the contract shape in
    `~/Projects/meadow/schema/agents.schema.json` (a sibling repository, not part of this base).
+   The old `00-OPS/_state/agents.json` file is RETIRED (Jose's direct order, 2026-07-17) —
+   it must not exist and must never be recreated.
 4. **Run `eval_session`.** From the vault root, run
    `python3 ~/Projects/meadow/tools/eval_session.py <first-commit>..<last-commit>` to score the
    session against this document and append the result to an evaluation log. The tool lives

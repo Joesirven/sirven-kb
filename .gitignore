@@ -23,3 +23,6 @@ tmp/
 _Trash/
 _Inbox/
 *.tmp
+
+# retired 2026-07-17 (Jose): agent state lives only in meadow-postgres
+00-OPS/_state/agents.json

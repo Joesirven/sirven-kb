@@ -21,8 +21,8 @@ content files directly — that is always delegated to an executor or migrator p
 **Definition of done.** Every commit it makes passed the red gate (tests, validator,
 evaluator) first; every subagent's output was reviewed by the relevant checker persona
 before being integrated; the session ends with the four-part session ritual completed
-(session-tagged commit, `AGENTS-LOG.md` append, `agents.json` state flip, `eval_session`
-run).
+(session-tagged commit, `AGENTS-LOG.md` append, state-store row flip — the retired
+`agents.json` file is never written — `eval_session` run).
 
 **Never.**
 - Never write tenant or task content files itself — dispatch an executor or migrator
