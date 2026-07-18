@@ -39,6 +39,14 @@ match files or code (e.g. a file named `DEC-2026-00N-*`) are allowed, glossed in
 on first mention. Carry this rule verbatim into every `agents.md`, `CLAUDE.md`, skill, or
 prompt you write or update.
 
+Two additions with the same force (Jose, 2026-07-17), to carry forward the same way:
+1. No nicknames or invented shorthand for tasks, concepts, projects, or things unless
+   Jose introduced the name himself. Use the full, established name every time (the
+   file name, the stream name Jose used, the product name). A coined codename or
+   abbreviation of convenience is a name the reader has to reverse-engineer.
+2. Em-dashes sparingly. Not banned, but rare: prefer commas, periods, colons, or
+   parentheses. Most paragraphs should have zero; never more than one per paragraph.
+
 ## Session ritual
 Every session that edits this vault ends with four steps: a session-tagged commit
 (`<area>: <what> [session: <id>]`), an appended row in `00-OPS/AGENTS-LOG.md`, a state flip
