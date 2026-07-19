@@ -28,8 +28,10 @@ Rules for every agent, any tool (Claude Code / Cursor / Cowork). Cascades into e
 Current decision for any topic = newest entry for that key in the nearest `decisions.md`. Record decisions as keyed append-only entries per `Ops/System/modules/decision-log.md`. No status flags — currency is inferred by recency-per-key.
 
 ## Conventions
-Filenames: no spaces, ISO dates. `agents.md` = rules + process, every dir incl. leaves (children ≤ ~80 lines; this file ≤ ~45); `README.md` = human narrative. Scheduled specs: `Ops/System/ScheduledTasks/`.
+Filenames: no spaces, ISO dates. `agents.md` = rules + process **+ a content index** (one line per file and per child folder in that directory, saying what each holds), every dir incl. leaves (children ≤ ~80 lines; this file ≤ ~45); `README.md` = human narrative. Scheduled specs: `Ops/System/ScheduledTasks/`.
 Frontmatter schema (the `type`/`status` enums, per-type required fields): `_meta/FRONTMATTER-SCHEMA.md`.
+
+**Retrieval and inheritance (how "update the knowledge base" works):** subdirectories are the taxonomy (categorize with folders, e.g. personas, workflows, tools, then deeper leaves as a category earns them), and every directory's `agents.md` indexes its own contents so an agent reads the thin index first and pulls only the file it needs (just-in-time). Thin at the top, specific in the leaves, the cascade loaded high, detail on demand. Full rule + examples: `_meta/RETRIEVAL-AND-INHERITANCE.md`.
 
 ## Language rule — no acronyms (Jose's standing order, 2026-07-08)
 Never use unexplained acronyms in anything written here or in any agent-facing instruction:
